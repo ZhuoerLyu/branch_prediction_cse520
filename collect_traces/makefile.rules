@@ -1,0 +1,68 @@
+#
+# Copyright (C) 2012-2021 Intel Corporation.
+# SPDX-License-Identifier: MIT
+#
+
+
+# This defines tests which run tools of the same name.  This is simply for convenience to avoid
+# defining the test name twice (once in TOOL_ROOTS and again in TEST_ROOTS).
+# Tests defined here should not be defined in TOOL_ROOTS and TEST_ROOTS.
+
+TEST_TOOL_ROOTS := branchcount branchpred branch_target_addr
+
+# This defines the tools which will be run during the the tests, and were not already defined in
+# TEST_TOOL_ROOTS.
+TOOL_ROOTS :=
+
+# This defines all the applications that will be run during the tests.
+APP_ROOTS := get_source_app regval_app oper_imm_app bsr_bsf_app
+
+# This defines any additional object files that need to be compiled.
+OBJECT_ROOTS := oper_imm_asm bsr_bsf_asm
+
+ifeq ($(TARGET_OS),windows)
+    ifeq ($(TARGET),intel64)
+        OBJECT_ROOTS += topopcode_asm
+    endif
+endif
+
+# This defines any additional dlls (shared objects), other than the pintools, that need to be compiled.
+DLL_ROOTS :=
+
+# This defines any static libraries (archives), that need to be built.
+LIB_ROOTS :=
+
+###### Place architecture-specific definitions here ######
+
+# Place ia32-specific definitions here if they apply to all supported operating systems.
+ifeq ($(TARGET),ia32)
+    TEST_TOOL_ROOTS += emuload
+endif
+
+# Place intel64-specific definitions here if they apply to all supported operating systems.
+ifeq ($(TARGET),intel64)
+    TEST_TOOL_ROOTS += inscount2_vregs
+endif
+
+# Linux
+ifeq ($(TARGET_OS),linux)
+    TEST_TOOL_ROOTS += buffer_linux fork_jit_tool follow_child_tool strace emudiv replacesigprobed
+    TEST_ROOTS += statica
+    SA_TOOL_ROOTS += statica
+    APP_ROOTS += fork_app follow_child_app1 follow_child_app2 divide_by_zero
+endif
+
+# macOS*
+ifeq ($(TARGET_OS),mac)
+    TEST_TOOL_ROOTS += fork_jit_tool follow_child_tool strace
+    TEST_ROOTS += statica prefer_parse_image_from_file
+    SA_TOOL_ROOTS += statica
+    APP_ROOTS += fork_app follow_child_app1 follow_child_app2
+endif
+
+# Windows
+ifeq ($(TARGET_OS),windows)
+    TEST_TOOL_ROOTS += w_malloctrace buffer_windows emudiv replacesigprobed dumpargv
+    APP_ROOTS += divide_by_zero
+endif
+

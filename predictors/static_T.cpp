@@ -12,24 +12,26 @@ int main(int argc, char* argv[]) {
 		return 1;
 	}
 
+	// read traces
 	std::ifstream trace_file(argv[1]);
 	
-	// do we need to convert addr in hex??
+	// intialize counter 
 	int branch_taken = 0;
 	long long target_address;
 	int always_taken = 0;
 	int instruction_count = 0;
 	float accuracy;
 
+	// iterate over trace file and read target address and branch (0 or 1) in target_address and branch_taken respectively 
 	while(trace_file >>  target_address >> branch_taken) {
-		cerr << "target addr: " << target_address <<  "branch taken?: " << branch_taken << endl;
 		instruction_count += 1;
 		if(branch_taken == 1){
 			always_taken += 1;
 			
 		}
 	}
-	cerr << "bt " << branch_taken << "\tic " << instruction_count << endl;
+	
+	// accuacy
 	accuracy = ((float)always_taken * 100 / instruction_count);
 	cerr << accuracy << endl;
 
