@@ -35,8 +35,11 @@ int main(int argc, char* argv[]) {
 	}
 
 	//calculate accuracy
+    // Generate metrics
+	cerr << "total number of prediction " << instruction_count << "\n";
+	cerr << "correct prediction as not taken " << always_not_taken << "\n";
 	accuracy = ((float)always_not_taken * 100 / instruction_count);
-	cerr << accuracy << endl;
+	cerr << "accuracy " << accuracy << endl;
 
 	//calculate mispredictions
 	
