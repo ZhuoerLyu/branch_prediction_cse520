@@ -12,7 +12,7 @@ To perform this analysis, we chose four different branch prediction methods:
 
 We implement these four methods separately, evaluate their performance, and compare them. 
 
-# Experiment Desing 
+# Experiment Design
 
 We designed an experiment to evaluate static and dynamic branch prediction methods comprehensively. Our experiment has three main phases:
 
