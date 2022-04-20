@@ -46,14 +46,14 @@ int main(int argc, char* argv[]) {
 		if(branch_taken == 1)
         {
             if(table_value == 2 || table_value == 3) {correct += 1;correct_predction_taken += 1;}
-            if (table_value != 3) {branch_prediction_table[index] = 1; wrong_predcitoin_not_taken += 1;}
+            if (table_value != 3) {branch_prediction_table[index] ++; wrong_predcitoin_not_taken += 1;}
 		}
 
         // If branch is not taken
         else if(branch_taken == 0)
         {
             if (table_value == 0 || table_value == 1) {correct += 1; correct_predction_not_taken += 1;}
-            if (table_value != 3) {branch_prediction_table[index]++; wrong_predcitoin_taken += 1;}
+            if (table_value != 0) {branch_prediction_table[index]--; wrong_predcitoin_taken += 1;}
         }
         // increase instruction count
 		instruction_count += 1;
