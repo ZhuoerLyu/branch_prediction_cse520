@@ -34,7 +34,10 @@ int main(int argc, char* argv[]) {
 	// accuacy
 	accuracy = ((float)always_taken * 100 / instruction_count);
 	cerr << accuracy << endl;
-
+	cerr << "total number of prediction " << instruction_count << "\n";
+	cerr << "correct prediction as taken " << always_taken << "\n";
+	accuracy = ((float)always_taken * 100 / instruction_count);
+	cerr << "accuracy " << accuracy << endl;
 
 
 }

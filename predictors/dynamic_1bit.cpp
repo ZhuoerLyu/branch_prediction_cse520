@@ -21,6 +21,11 @@ int main(int argc, char* argv[]) {
 	int instruction_count = 0;
 	float accuracy;
 
+	int wrong_predcitoin_taken = 0;
+	int wrong_predcitoin_not_taken = 0;
+
+	int correct_predction_taken = 0;
+	int correct_predction_not_taken = 0;
     // Configure table size
     int tsize = 1;
     int branch_prediction_table[tsize];
@@ -39,20 +44,27 @@ int main(int argc, char* argv[]) {
         // If branch is taken
 		if(branch_taken == 1)
         {
-            if(table_value == 1) correct += 1;
-            else branch_prediction_table[index] = 1;
+            if(table_value == 1) {correct += 1;correct_predction_taken += 1;}
+            else {branch_prediction_table[index] = 1; wrong_predcitoin_taken += 1;}
 		}
         else if(branch_taken == 0)
         {
-            if (table_value == 0) correct += 1;
-            else branch_prediction_table[index] = 0;
+            if (table_value == 0) {correct += 1; correct_predction_not_taken += 1;}
+            else {branch_prediction_table[index] = 0; wrong_predcitoin_not_taken += 1;}
         }
         // increase instruction count
 		instruction_count += 1;
 	}
 	cerr << "bt " << branch_taken << "\tic " << instruction_count << endl;
+
+	// Generate metrics
+	cerr << "total number of prediction " << instruction_count << "\n";
+	cerr << "wrong prediction as taken " << wrong_predcitoin_taken << "\n";
+	cerr << "wrong prediction as not taken " << wrong_predcitoin_not_taken << "\n";
+	cerr << "correct predction as taken " << correct_predction_taken << "\n";
+	cerr << "correct prediction as not taken " << correct_predction_not_taken << "\n";
 	accuracy = ((float)correct * 100 / instruction_count);
-	cerr << accuracy << endl;
+	cerr << "accuracy " << accuracy << endl;
 
 
 

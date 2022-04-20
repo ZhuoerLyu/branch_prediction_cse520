@@ -21,8 +21,13 @@ int main(int argc, char* argv[]) {
 	int instruction_count = 0;
 	float accuracy;
 
-    // Configure table size as 2 bits
-    int tsize = 2;
+	int wrong_predcitoin_taken = 0;
+	int wrong_predcitoin_not_taken = 0;
+
+	int correct_predction_taken = 0;
+	int correct_predction_not_taken = 0;
+    // Configure table size
+    int tsize = 1;
     int branch_prediction_table[tsize];
 
     // Initilize branch prediciton table
@@ -40,25 +45,32 @@ int main(int argc, char* argv[]) {
         // If branch is taken
 		if(branch_taken == 1)
         {
-            if(table_value == 2 || table_value == 3) correct += 1;
-            if (table_value != 3) branch_prediction_table[index] += 1;
+            if(table_value == 2 || table_value == 3) {correct += 1;correct_predction_taken += 1;}
+            if (table_value != 3) {branch_prediction_table[index] ++; wrong_predcitoin_not_taken += 1;}
 		}
 
         // If branch is not taken
         else if(branch_taken == 0)
         {
-            if (table_value == 0 || table_value == 1) correct += 1;
-            if (table_value != 3) branch_prediction_table[index]++;
+            if (table_value == 0 || table_value == 1) {correct += 1; correct_predction_not_taken += 1;}
+            if (table_value != 0) {branch_prediction_table[index]--; wrong_predcitoin_taken += 1;}
         }
         // increase instruction count
 		instruction_count += 1;
 	}
 	cerr << "bt " << branch_taken << "\tic " << instruction_count << endl;
+
+    // Generate metrics
+	cerr << "total number of prediction " << instruction_count << "\n";
+	cerr << "wrong prediction as taken " << wrong_predcitoin_taken << "\n";
+	cerr << "wrong prediction as not taken " << wrong_predcitoin_not_taken << "\n";
+	cerr << "correct predction as taken " << correct_predction_taken << "\n";
+	cerr << "correct prediction as not taken " << correct_predction_not_taken << "\n";
+	accuracy = ((float)correct * 100 / instruction_count);
+	cerr << "accuracy " << accuracy << endl;
 	accuracy = ((float)correct * 100 / instruction_count);
 	cerr << accuracy << endl;
 
 
 
 }
-
-

@@ -8,7 +8,7 @@
 # defining the test name twice (once in TOOL_ROOTS and again in TEST_ROOTS).
 # Tests defined here should not be defined in TOOL_ROOTS and TEST_ROOTS.
 
-TEST_TOOL_ROOTS := branchcount branchpred branch_target_addr
+TEST_TOOL_ROOTS := branchpred
 
 # This defines the tools which will be run during the the tests, and were not already defined in
 # TEST_TOOL_ROOTS.
