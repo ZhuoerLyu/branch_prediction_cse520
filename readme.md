@@ -21,7 +21,7 @@ We designed an experiment to evaluate static and dynamic branch prediction metho
  Phase 3: Performance evaluation and comparison 
 
 Figure 1 shows the design of our experiment. 
-<img src="(https://user-images.githubusercontent.com/50604576/164134283-1be0d094-fb9e-49d0-b291-cba5dd123104.png)" width="50%" height="50%">
+<img src="https://user-images.githubusercontent.com/50604576/164134283-1be0d094-fb9e-49d0-b291-cba5dd123104.png" width="50%" height="50%">
 ![Cse520-diagram](https://user-images.githubusercontent.com/50604576/164134283-1be0d094-fb9e-49d0-b291-cba5dd123104.png) 
 
 In Phase 1, we create different types of Loop-Condition codes as our test cases in C languages. We made four test cases:
