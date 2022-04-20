@@ -82,7 +82,13 @@ Test Case 4 : 1 For, 1 If with different Iteration number
 
 
 
-## Instruction to Trace generator implementation
+## Instruction 
+
+### Run predictors:
+`./snt traces.txt`
+`./st traces.txt`
+`./dynamic_1bit traces.txt`
+`./dynamic_2bit traces.txt
 
 ### Pin-tool set up
 
@@ -95,13 +101,7 @@ Test Case 4 : 1 For, 1 If with different Iteration number
 	`brancpred.so : binary generated from our branchpred.cpp
 	sample: program we to get traces for
 traces generated on:
-Ubuntu 20.04.1 LTS`
-11:34
->### Run predictors:
-`./snt traces.txt`
-`./st traces.txt`
-`./dynamic_1bit traces.txt`
-`./dynamic_2bit traces.txt
+Ubuntu 20.04.1 LTS`11:34
 
 
 
