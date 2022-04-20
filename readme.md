@@ -39,9 +39,12 @@ In Phase 3, we run the implemented branch prediction methods on the generated tr
 
 To evaluate these four branch prediction methods, we consider four metrics:
 1) Accuracy
- 2) Misprediction 
-3) Misprediction as TAKEN 
-4) Misprediction as Not-TAKEN
+2) Correct Prediction
+3) Correct Prediction as TAKEN 
+4) Correct Prediction as Not-TAKEN
+5) Misprediction 
+6) Misprediction as TAKEN 
+7) Misprediction as Not-TAKEN
 
 
 We also run another experiment to evaluate the effects of numbers of iterations on branch prediction performance.
