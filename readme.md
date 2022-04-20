@@ -21,7 +21,7 @@ We designed an experiment to evaluate static and dynamic branch prediction metho
  Phase 3: Performance evaluation and comparison 
 
 Figure 1 shows the design of our experiment. 
-![Cse520-diagram](https://user-images.githubusercontent.com/50604576/164134283-1be0d094-fb9e-49d0-b291-cba5dd123104.png) 
+![Cse520-diagram](https://user-images.githubusercontent.com/50604576/164134283-1be0d094-fb9e-49d0-b291-cba5dd123104.png width="50%" height="50%") 
 
 In Phase 1, we create different types of Loop-Condition codes as our test cases in C languages. We made four test cases:
 1-     One For loop with one If
@@ -44,6 +44,28 @@ To evaluate these four branch prediction methods, we consider four metrics:
 
 We also run another experiment to evaluate the effects of numbers of iterations on branch prediction performance.
 
+
+
+# Results
+
+During our experiment we observed that:
+ 1: Static Branch Prediction Always Not-Taken is always better than Static Branch Prediction Always Taken 
+ 2: 1-Bit Branch Prediction Always is better than Static Branch Prediction Always Taken
+ 3: Surprisingly Static Branch Prediction Always Not-Taken is always better than 1-Bit Branch Prediction
+ 4: Surprisingly 1-Bit Branch Prediction Always is better than 2-Bit Branch Prediction 
+ 5: Static Branch Prediction Always Not-Taken is always better than other three branch prediction methods
+
+
+Here are the results of our experiment on four test cases:
+
+
+![case-study3](https://user-images.githubusercontent.com/50604576/164154521-0e6b90f0-a5ac-446e-af90-d73b9906460e.png width="50%" height="50%")
+
+![case-study2](https://user-images.githubusercontent.com/50604576/164154585-db2f51d2-6c4c-47cc-b49e-2ba8513c0220.png width="50%" height="50%")
+
+![case-study1](https://user-images.githubusercontent.com/50604576/164154623-6c85a091-d838-4944-88a2-8aa322aecdc2.png width="50%" height="50%")
+
+![case-study4](https://user-images.githubusercontent.com/50604576/164154660-5110981b-8560-49b9-9c1e-550cfe20eb62.png width="50%" height="50%")
 
 
 
