@@ -82,6 +82,29 @@ Test Case 4 : 1 For, 1 If with different Iteration number
 
 
 
+## Instruction to Trace generator implementation
+
+### Pin-tool set up
+
+1. `wget https://software.intel.com/sites/landingpage/pintool/downloads/pin-3.22-98547-g7a303a835-gcc-linux.tar.gz`
+2. `tar -zxvf pin-3.22-98547-g7a303a835-gcc-linux.tar.gz`
+3. `mv collect_traces to pin-3.22-98547-g7a303a835-gcc-linux/source/tools`
+4. `make all TARGET=intel64`
+5. `cd pin-3.22-98547-g7a303a835-gcc-linux/source/tools/collect_traces`
+6. `./../../pin -t obj-intel64/branchpred.so -- sample_C/sample`
+	`brancpred.so : binary generated from our branchpred.cpp
+	sample: program we to get traces for
+traces generated on:
+Ubuntu 20.04.1 LTS`
+11:34
+>### Run predictors:
+`./snt traces.txt`
+`./st traces.txt`
+`./dynamic_1bit traces.txt`
+`./dynamic_2bit traces.txt
+
+
+
 
 
 
