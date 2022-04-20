@@ -21,6 +21,7 @@ We designed an experiment to evaluate static and dynamic branch prediction metho
  Phase 3: Performance evaluation and comparison 
 
 Figure 1 shows the design of our experiment. 
+
 <img src="https://user-images.githubusercontent.com/50604576/164134283-1be0d094-fb9e-49d0-b291-cba5dd123104.png" width="40%" height="40%">
 
 
@@ -60,11 +61,19 @@ During our experiment we observed that:
 Here are the results of our experiment on four test cases:
 
 
-![case-study3](https://user-images.githubusercontent.com/50604576/164154521-0e6b90f0-a5ac-446e-af90-d73b9906460e.png)
+Test Case 1 : 1 For, 1 If: 
+
+![case-study1](https://user-images.githubusercontent.com/50604576/164154623-6c85a091-d838-4944-88a2-8aa322aecdc2.png)
+
+Test Case 2 : 2 For, 1 If:
 
 ![case-study2](https://user-images.githubusercontent.com/50604576/164154585-db2f51d2-6c4c-47cc-b49e-2ba8513c0220.png)
 
-![case-study1](https://user-images.githubusercontent.com/50604576/164154623-6c85a091-d838-4944-88a2-8aa322aecdc2.png)
+Test Case 3 : 2 For, 2 If
+
+![case-study3](https://user-images.githubusercontent.com/50604576/164154521-0e6b90f0-a5ac-446e-af90-d73b9906460e.png)
+
+Test Case 4 : 1 For, 1 If with different Iteration number
 
 ![case-study4](https://user-images.githubusercontent.com/50604576/164154660-5110981b-8560-49b9-9c1e-550cfe20eb62.png)
 
