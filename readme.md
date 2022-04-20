@@ -85,6 +85,8 @@ Test Case 4 : 1 For, 1 If with different Iteration number
 ## Instruction 
 
 ### Run predictors:
+
+You can use any of the 4 traces present in the trace directory
 `./snt traces.txt`
 `./st traces.txt`
 `./dynamic_1bit traces.txt`
