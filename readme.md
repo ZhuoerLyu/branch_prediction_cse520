@@ -87,10 +87,10 @@ Test Case 4 : 1 For, 1 If with different Iteration number
 ### Run predictors:
 
 You can use any of the 4 traces present in the trace directory
-`./snt traces.txt`
-`./st traces.txt`
-`./dynamic_1bit traces.txt`
-`./dynamic_2bit traces.txt
+`./snt /traces/traces.txt`
+`./st /traces/traces.txt`
+`./dynamic_1bit /traces/traces.txt`
+`./dynamic_2bit /traces/traces.txt`
 
 ### Pin-tool set up
 
