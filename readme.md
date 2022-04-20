@@ -1,3 +1,29 @@
+# Project Description
+
+In this project we evaluate static and dynamic branch prediction methods. The main goal of this project is to understand how different branch prediction methods work, and evaluate these methodes performance.
+To perform this analysis we chose four different branch prediction methods:
+
+1-Static always Taken
+2-Static always Not-Taken
+3-Bit Dynamic 
+4-Bits Dynamic
+
+
+We implement these four methods seperately, evaluate theier performance, and compare their performance. 
+
+# Experiment Desing 
+
+To perform a comprehensive evaluation on static and dynamic branch prediction methods we designe an experiment. Our experiment has three main phases:
+
+ Phase 1: Trace generator implementation
+ Phase 2: Branch Prediction metods implementation
+ Phase 3: Performance evlautation and comparison 
+
+Figure 1 shows the design of our experiment. 
+
+# Evaluation metrics
+
+
 # Branch Prediction
 This project is implementing and simulating different branch prediction algorithms and comparing their performance.  
 
